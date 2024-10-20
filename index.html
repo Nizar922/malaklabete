@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malak on da track</title>
+  <style>
+    /* Style de base pour rendre la page magnifique */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-image: url('https://i.imgur.com/QztlVTN.jpeg'); /* Ajoute une image de fond triste */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    /* Conteneur principal */
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    /* Style du titre principal */
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      font-family: 'Courier New', monospace;
+      color: #ff4d6d; /* Belle couleur pour le titre */
+      letter-spacing: 5px;
+    }
+
+    p {
+      font-size: 1.3em;
+      margin-bottom: 20px;
+      color: #ddd;
+    }
+
+    .hint {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 15px;
+      margin-bottom: 20px;
+      border-left: 5px solid #ff4d6d;
+      color: #f8c471;
+      font-style: italic;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      width: 80%;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    /* Style responsive */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5em;
+      }
+
+      p {
+        font-size: 1.1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Titre stylisé -->
+    <h1>Malak on da track</h1>
+
+    <!-- Message explicatif -->
+    <p>
+      Tu te demandes sûrement à quoi sert le QR code, tu sauras tout après avoir trouvé le mot de passe.<br>
+      Pour cela, tu auras besoin d'indices que je te fournirai si tu es joueuse, bien sûr.
+    </p>
+
+    <!-- Indice fourni pour deviner le mot de passe -->
+    <div class="hint">
+      <strong>Indice :</strong> Les deux choses qui nous faudra pour que ça puisse marcher entre nous, inchAllah.
+    </div>
+
+    <!-- Champ de saisie du mot de passe -->
+    <input type="password" id="password" placeholder="Mot de passe">
+
+    <!-- Bouton de validation -->
+    <button onclick="checkPassword()">Valider</button>
+  </div>
+
+  <script>
+    // Fonction pour vérifier le mot de passe
+    function checkPassword() {
+      const password = document.getElementById('password').value;
+      const correctPassword = 'CONFIANCEPATIENCE'; // Le bon mot de passe
+
+      if (password === correctPassword) {
+        // Si le mot de passe est correct
+        alert('Voilà ma princesse tu as tout compris, enfin !');
+        window.location.href = 'tyu.html'; // Redirection vers la page 2
+      } else {
+        alert('"Rien" n\'est pas une bonne réponse, essaie encore.');
+      }
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Félicitations !</title>
+  <style>
+    /* Style de base avec fond joyeux */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-image: url('happy.jpg'); /* Ajoute ton image de fond heureux */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    /* Conteneur principal */
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #ff4d6d;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    /* Style du GIF */
+    img {
+      width: 80%;
+      max-width: 400px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    /* Style responsive */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1.2em;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Titre de félicitations -->
+    <h1>Félicitations, ma princesse !</h1>
+
+    <!-- Message personnalisé -->
+    <p>Je savais que tu y arriverais.<br>Et en vrai, tout ça c était une excuse pour te dire à quel point tu comptes pour moi.</p>
+
+    <p>J'ai passé énormément de temps pour concevoir ce site, j'espère que ça t'a fait plaisir !</p>
+    <p>Je vais quand même pas m'arreter là
+    </p>
+
+    <!-- GIF de félicitations -->
+    <img src="https://www.jedecore.com/gif/felicitations/felicitations-017.gif" alt="Félicitations">
+  </div>
+</body>
+</html>
