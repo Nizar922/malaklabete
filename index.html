@@ -179,6 +179,28 @@
         alert('"Rien" n\'est pas une bonne réponse, essaie encore.');
       }
     }
+    // Artistes préférés stockés dans un tableau
+    const artistesPreferes = ['KANYEWEST', 'THEWEEKND', 'FUTURE'];
+// Fonction pour vérifier la tentative de l'utilisateur
+function verifierTentative() {
+    // Récupérer l'entrée de l'utilisateur
+    const reponseUtilisateur = document.getElementById("reponse").value.toUpperCase();
+    
+    // Séparer la réponse de l'utilisateur en artistes (si elle est collée, utiliser substrings)
+    const artistesUtilisateur = [
+        reponseUtilisateur.substring(0, 9),    // KANYEWEST
+        reponseUtilisateur.substring(9, 17),   // THEWEEKND
+        reponseUtilisateur.substring(17)       // FUTURE
+    ];
+    // Vérifier combien d'artistes sont corrects
+    let artistesCorrects = 0;
+    for (let i = 0; i < artistesUtilisateur.length; i++) {
+        if (artistesPreferes.includes(artistesUtilisateur[i])) {
+            artistesCorrects++;
+        }
+    }
+    // Afficher le résultat
+    document.getElementById("resultat").textContent = `Artistes corrects : ${artistesCorrects} sur 3`;
   </script>
 </body>
 </html>
