@@ -105,7 +105,7 @@
     </div>
 
     <!-- Champ de saisie du mot de passe -->
-    <input type="password" id="password" placeholder="Mot de passe">
+    <input type="password" id="password" placeholder="Mot de passe" oninput="verifierTentative()">
 
     <!-- Bouton de validation -->
     <button onclick="verifierMotDePasse()">Valider</button>
@@ -115,10 +115,13 @@
   </div>
 
   <script>
-    // Fonction pour vérifier le mot de passe
+    // Artistes préférés stockés dans un tableau
+    const artistesPreferes = ['KANYEWEST', 'THEWEEKND', 'FUTURE'];
+
+    // Fonction pour vérifier le mot de passe complet
     function verifierMotDePasse() {
       const batat = document.getElementById('password').value.toUpperCase();
-      const motDePasseCorrect = atob('S0FOWUVXRVNUVEhFV0VFS05ERlVUVVJF'); // Mot de passe encodé (KANYEWESTTHEWEEKNDFUTURE)
+      const motDePasseCorrect = 'KANYEWESTTHEWEEKNDFUTURE'; // Mot de passe correct
 
       if (batat === motDePasseCorrect) {
         alert('Voilà ma princesse, tu as tout compris, enfin !');
@@ -128,27 +131,24 @@
       }
     }
 
-    // Artistes préférés stockés dans un tableau
-    const artistesPreferes = ['KANYEWEST', 'THEWEEKND', 'FUTURE'];
-
-    // Fonction pour vérifier la tentative de l'utilisateur
+    // Fonction pour vérifier la tentative de l'utilisateur (partielle ou complète)
     function verifierTentative() {
       // Récupérer l'entrée de l'utilisateur
       const reponseUtilisateur = document.getElementById('password').value.toUpperCase();
       
-      // Séparer la réponse de l'utilisateur en artistes
+      // Extraire les artistes à partir de la saisie partielle ou complète
       const artistesUtilisateur = [
-          reponseUtilisateur.substring(0, 9),    // KANYEWEST
-          reponseUtilisateur.substring(9, 17),   // THEWEEKND
-          reponseUtilisateur.substring(17)       // FUTURE
+        reponseUtilisateur.substring(0, 9),    // KANYEWEST
+        reponseUtilisateur.substring(9, 17),   // THEWEEKND
+        reponseUtilisateur.substring(17)       // FUTURE
       ];
-      
+
       // Vérifier combien d'artistes sont corrects
       let artistesCorrects = 0;
       for (let i = 0; i < artistesUtilisateur.length; i++) {
-          if (artistesPreferes.includes(artistesUtilisateur[i])) {
-              artistesCorrects++;
-          }
+        if (artistesPreferes.includes(artistesUtilisateur[i])) {
+          artistesCorrects++;
+        }
       }
 
       // Afficher le résultat
@@ -157,3 +157,4 @@
   </script>
 </body>
 </html>
+
