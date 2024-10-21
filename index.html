@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,7 +88,6 @@
     }
   </style>
 </head>
-<!-- Je t'ai dis de pas venir ici mon loup. -->
 <body>
   <div class="container">
     <!-- Titre stylisé -->
@@ -102,105 +101,59 @@
 
     <!-- Indice fourni pour deviner le mot de passe -->
     <div class="hint">
-      <strong>Indice :</strong> Les trois choses qui nous faudra pour que ça puisse marcher entre nous, je te vois venir INTERDICTION d'inspecter vsy tu connais j'ai pris un hebergeur gratuit et je sais mm pas proteger mes mdp tu crois je vais protéger ce truc , le mdp est par ordre alphabetique en MAJ, exemple :ARGENTDRAHAMMOULA
+      <strong>Indice :</strong> Les trois choses qui nous faudra pour que ça puisse marcher entre nous. Le mot de passe est par ordre alphabétique en MAJ, exemple : ARGENTDRAHAMMOULA.
     </div>
 
     <!-- Champ de saisie du mot de passe -->
     <input type="password" id="password" placeholder="Mot de passe">
 
     <!-- Bouton de validation -->
-    <button onclick="aaaaaaaaaaaa()">Valider</button>
+    <button onclick="verifierMotDePasse()">Valider</button>
+
+    <!-- Affichage du nombre d'artistes corrects -->
+    <p id="resultat"></p>
   </div>
 
   <script>
-    function jtevois() {
-      const batat = document.getElementById('password').value;
-      const atobb = atob('S0FOWUVGZSGDEhFV0VFS05ERlVUVVJF'); 
+    // Fonction pour vérifier le mot de passe
+    function verifierMotDePasse() {
+      const batat = document.getElementById('password').value.toUpperCase();
+      const motDePasseCorrect = atob('S0FOWUVXRVNUVEhFV0VFS05ERlVUVVJF'); // Mot de passe encodé (KANYEWESTTHEWEEKNDFUTURE)
 
-      if (batat === atobb) {
-        alert('Voilà ma princesse tu as tout compris, enfin !');
-        window.location.href = 'tyu.html'; // Redirection vers la page 2
-      } else {
-        alert('Tu es trop nulle tete de bite');
-      }
-    }
-    function aaaaааааaaaa() {
-      const batat = document.getElementById('password').value;
-      const atobb = atob('S0FOWGZGCDNUVEhFV0VFS05ERlVUVVJF'); 
-
-      if (batat === atobb) {
-        alert('Voilà ma princesse tu as tout compris, enfin !');
-        window.location.href = 'tyu.html'; // Redirection vers la page 2
-      } else {
-        alert('"Rien" n\'est pas une bonne réponse, essaie encore.')
-      }
-    }
-    function aaaaaaaaaaaa() {
-      const batat = document.getElementById('password').value;
-      const atobb = atob('S0FOWUVXRVNUVEhFV0VFS05ERlVUVVJF'); 
-
-      if (batat === atobb) {
-        alert('Voilà ma princesse tu as tout compris, enfin !');
-        window.location.href = 'tyu.html'; // Redirection vers la page 2
+      if (batat === motDePasseCorrect) {
+        alert('Voilà ma princesse, tu as tout compris, enfin !');
+        window.location.href = 'tyu.html'; // Redirection vers une autre page
       } else {
         alert('"Rien" n\'est pas une bonne réponse, essaie encore.');
       }
     }
-    function aaaаaaaaaaa() {
-      const batat = document.getElementById('password').value;
-      const atobb = atob('S0FOWUVXFVCZAAQEhFV0VFS05ERlVUVVJF'); 
 
-      if (batat === atobb) {
-        alert('Voilà ma princesse tu as tout compris, enfin !');
-        window.location.href = 'tyu.html'; // Redirection vers la page 2
-      } else {
-        alert('"Rien" n\'est pas une bonne réponse, essaie encore.');
-      }
-    }
-    function jetaime() {
-      const batat = document.getElementById('password').value;
-      const atobb = atob('S0FOWUGEZFGZVEhFV0VFS05ERlVUVVJF'); 
-
-      if (batat === atobb) {
-        alert('Voilà ma princesse tu as tout compris, enfin !');
-        window.location.href = 'tyu.html'; // Redirection vers la page 2
-      } else {
-        alert('"Rien" n\'est pas une bonne réponse, essaie encore.');
-      }
-    }
-    function aaaaaaaaaa() {
-      const batat = document.getElementById('password').value;
-      const atobb = atob('S0FOWUVXRVfsfzNUVEhFV0VFS05ERlVUVVJF'); 
-
-      if (batat === atobb) {
-        alert('Voilà ma princesse tu as tout compris, enfin !');
-        window.location.href = 'tyu.html'; // Redirection vers la page 2
-      } else {
-        alert('"Rien" n\'est pas une bonne réponse, essaie encore.');
-      }
-    }
     // Artistes préférés stockés dans un tableau
     const artistesPreferes = ['KANYEWEST', 'THEWEEKND', 'FUTURE'];
-// Fonction pour vérifier la tentative de l'utilisateur
-function verifierTentative() {
-    // Récupérer l'entrée de l'utilisateur
-    const reponseUtilisateur = document.getElementById("reponse").value.toUpperCase();
-    
-    // Séparer la réponse de l'utilisateur en artistes (si elle est collée, utiliser substrings)
-    const artistesUtilisateur = [
-        reponseUtilisateur.substring(0, 9),    // KANYEWEST
-        reponseUtilisateur.substring(9, 17),   // THEWEEKND
-        reponseUtilisateur.substring(17)       // FUTURE
-    ];
-    // Vérifier combien d'artistes sont corrects
-    let artistesCorrects = 0;
-    for (let i = 0; i < artistesUtilisateur.length; i++) {
-        if (artistesPreferes.includes(artistesUtilisateur[i])) {
-            artistesCorrects++;
-        }
+
+    // Fonction pour vérifier la tentative de l'utilisateur
+    function verifierTentative() {
+      // Récupérer l'entrée de l'utilisateur
+      const reponseUtilisateur = document.getElementById('password').value.toUpperCase();
+      
+      // Séparer la réponse de l'utilisateur en artistes
+      const artistesUtilisateur = [
+          reponseUtilisateur.substring(0, 9),    // KANYEWEST
+          reponseUtilisateur.substring(9, 17),   // THEWEEKND
+          reponseUtilisateur.substring(17)       // FUTURE
+      ];
+      
+      // Vérifier combien d'artistes sont corrects
+      let artistesCorrects = 0;
+      for (let i = 0; i < artistesUtilisateur.length; i++) {
+          if (artistesPreferes.includes(artistesUtilisateur[i])) {
+              artistesCorrects++;
+          }
+      }
+
+      // Afficher le résultat
+      document.getElementById("resultat").textContent = `Artistes corrects : ${artistesCorrects} sur 3`;
     }
-    // Afficher le résultat
-    document.getElementById("resultat").textContent = `Artistes corrects : ${artistesCorrects} sur 3`;
   </script>
 </body>
 </html>
