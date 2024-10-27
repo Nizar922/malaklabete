@@ -91,7 +91,7 @@
 <body>
   <div class="container">
     <!-- Titre stylisé -->
-    <h1>Malak on da track</h1>
+    <h1>LA Bete</h1>
 
     <!-- Message explicatif -->
     <p>
@@ -128,30 +128,28 @@
       } else {
         alert('"Rien" n\'est pas une bonne réponse, essaie encore.');
       }
+        // Artistes préférés stockés dans un tableau
+    const artistesPreferes = ['KANYEWEST', 'THEWEEKND', 'FUTURE'];
+// Fonction pour vérifier la tentative de l'utilisateur (partielle ou complète)
+function verifierTentative() {
+  // Récupérer l'entrée de l'utilisateur et la mettre en majuscules
+  const reponseUtilisateur = document.getElementById('password').value.toUpperCase();
+  
+  // Diviser l'entrée en morceaux basés sur les longueurs des artistes
+  const artistesUtilisateur = [
+    reponseUtilisateur.substring(0, 9),    // KANYEWEST (9 caractères)
+    reponseUtilisateur.substring(9, 18),   // THEWEEKND (9 caractères)
+    reponseUtilisateur.substring(18)       // FUTURE (6 caractères)
+  ];
+  // Compter combien d'artistes sont corrects (en fonction de l'ordre)
+  let artistesCorrects = 0;
+  for (let i = 0; i < artistesUtilisateur.length; i++) {
+    if (artistesUtilisateur[i] === artistesPreferes[i]) {
+      artistesCorrects++;
     }
-
-    // Fonction pour vérifier la tentative de l'utilisateur (partielle ou complète)
-    function verifierTentative() {
-      // Récupérer l'entrée de l'utilisateur
-      const reponseUtilisateur = document.getElementById('password').value.toUpperCase();
-      
-      // Extraire les artistes à partir de la saisie partielle ou complète
-      const artistesUtilisateur = [
-        reponseUtilisateur.substring(0, 9),    // KANYEWEST
-        reponseUtilisateur.substring(9, 17),   // THEWEEKND
-        reponseUtilisateur.substring(17)       // FUTURE
-      ];
-
-      // Vérifier combien d'artistes sont corrects
-      let artistesCorrects = 0;
-      for (let i = 0; i < artistesUtilisateur.length; i++) {
-        if (artistesPreferes.includes(artistesUtilisateur[i])) {
-          artistesCorrects++;
-        }
-      }
-
-      // Afficher le résultat
-      document.getElementById("resultat").textContent = `Artistes corrects : ${artistesCorrects} sur 3`;
+  }
+  // Afficher le résultat dans l'élément HTML avec id "resultat"
+  document.getElementById("resultat").textContent = `Artistes corrects : ${artistesCorrects} sur 3`;
     }
   </script>
 </body>
