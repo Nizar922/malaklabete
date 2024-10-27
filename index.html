@@ -120,7 +120,7 @@
     // Fonction pour vérifier le mot de passe complet
     function verifierMotDePasse() {
       const batat = document.getElementById('password').value.toUpperCase();
-      const motDePasseCorrect = 'KANYEWESTTHEWEEKNDFUTURE'; // Mot de passe correct
+      const motDePasseCorrect = artistesPreferes.join(''); // Recréer le mot de passe correct à partir du tableau
 
       if (batat === motDePasseCorrect) {
         alert('Voilà ma princesse, tu as tout compris, enfin !');
@@ -128,30 +128,31 @@
       } else {
         alert('"Rien" n\'est pas une bonne réponse, essaie encore.');
       }
-        // Artistes préférés stockés dans un tableau
-    const artistesPreferes = ['KANYEWEST', 'THEWEEKND', 'FUTURE'];
-// Fonction pour vérifier la tentative de l'utilisateur (partielle ou complète)
-function verifierTentative() {
-  // Récupérer l'entrée de l'utilisateur et la mettre en majuscules
-  const reponseUtilisateur = document.getElementById('password').value.toUpperCase();
-  
-  // Diviser l'entrée en morceaux basés sur les longueurs des artistes
-  const artistesUtilisateur = [
-    reponseUtilisateur.substring(0, 9),    // KANYEWEST (9 caractères)
-    reponseUtilisateur.substring(9, 18),   // THEWEEKND (9 caractères)
-    reponseUtilisateur.substring(18)       // FUTURE (6 caractères)
-  ];
-  // Compter combien d'artistes sont corrects (en fonction de l'ordre)
-  let artistesCorrects = 0;
-  for (let i = 0; i < artistesUtilisateur.length; i++) {
-    if (artistesUtilisateur[i] === artistesPreferes[i]) {
-      artistesCorrects++;
     }
-  }
-  // Afficher le résultat dans l'élément HTML avec id "resultat"
-  document.getElementById("resultat").textContent = `Artistes corrects : ${artistesCorrects} sur 3`;
+
+    // Fonction pour vérifier la tentative de l'utilisateur (partielle ou complète)
+    function verifierTentative() {
+      // Récupérer l'entrée de l'utilisateur et la mettre en majuscules
+      const reponseUtilisateur = document.getElementById('password').value.toUpperCase();
+      
+      // Diviser l'entrée en morceaux basés sur les longueurs des artistes
+      const artistesUtilisateur = [
+        reponseUtilisateur.substring(0, 9),    // KANYEWEST (9 caractères)
+        reponseUtilisateur.substring(9, 18),   // THEWEEKND (9 caractères)
+        reponseUtilisateur.substring(18)       // FUTURE (6 caractères)
+      ];
+
+      // Compter combien d'artistes sont corrects (en fonction de l'ordre)
+      let artistesCorrects = 0;
+      for (let i = 0; i < artistesUtilisateur.length; i++) {
+        if (artistesUtilisateur[i] === artistesPreferes[i]) {
+          artistesCorrects++;
+        }
+      }
+
+      // Afficher le résultat dans l'élément HTML avec id "resultat"
+      document.getElementById("resultat").textContent = `Artistes corrects : ${artistesCorrects} sur 3`;
     }
   </script>
 </body>
 </html>
-
